@@ -319,7 +319,7 @@
             font-size: 13px;
         }
 
-        /* Native Video Player Modal with Full Controls (Speed, Volume, Fullscreen) */
+        /* Native Video Player Modal with Full Controls */
         #videoModal {
             position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
             display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px;
@@ -417,6 +417,19 @@
             <h2 class="section-title">🔥 Trending Anime Now <i class="fas fa-fire" style="color: var(--accent);"></i></h2>
             <div class="swiper-container trending-swiper">
                 <div class="swiper-wrapper">
+                    <!-- Your Uploaded Video Card -->
+                    <div class="swiper-slide anime-card-wrapper">
+                        <div class="anime-card" onclick="openPlayer('no name', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4')">
+                            <div class="anime-poster">
+                                <span class="badge">HD</span>
+                                <button class="bookmark-btn" onclick="event.stopPropagation(); toggleBookmark(this, 'no name', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4')"><i class="fas fa-bookmark"></i></button>
+                                <img src="https://picsum.photos/300/450?random=100" alt="no name">
+                                <div class="play-overlay"><i class="fas fa-play"></i></div>
+                            </div>
+                            <div class="anime-info"><div class="anime-title">no name</div></div>
+                        </div>
+                    </div>
+
                     <div class="swiper-slide anime-card-wrapper">
                         <div class="anime-card" onclick="openPlayer('Solo Leveling', 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4')">
                             <div class="anime-poster">
@@ -626,7 +639,7 @@
         </div>
     </div>
 
-    <!-- Native HTML5 Video Player Modal (Supports Playback Speed, Fullscreen, Volume) -->
+    <!-- Native HTML5 Video Player Modal -->
     <div id="videoModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -796,9 +809,9 @@
         // Surprise Me
         function surpriseMe() {
             let shows = [
+                {name: 'no name', url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'},
                 {name: 'Solo Leveling', url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'},
-                {name: 'Avatar: The Last Airbender', url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4'},
-                {name: 'Demon Slayer Infinity Castle', url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'}
+                {name: 'Avatar: The Last Airbender', url: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4'}
             ];
             let rand = shows[Math.floor(Math.random() * shows.length)];
             openPlayer(rand.name, rand.url);
