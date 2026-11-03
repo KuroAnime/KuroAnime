@@ -319,7 +319,7 @@
             font-size: 13px;
         }
 
-        /* Native Video Player Modal */
+        /* Native Video Player Modal with Full Controls (Speed, Volume, Fullscreen) */
         #videoModal {
             position: fixed; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
             display: none; align-items: center; justify-content: center; z-index: 9999; padding: 20px;
@@ -626,7 +626,7 @@
         </div>
     </div>
 
-    <!-- Native HTML5 Video Player Modal -->
+    <!-- Native HTML5 Video Player Modal (Supports Playback Speed, Fullscreen, Volume) -->
     <div id="videoModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -634,7 +634,7 @@
                 <button class="close-modal" onclick="closePlayer()">&times;</button>
             </div>
             <div class="video-container">
-                <video id="nativeVideoPlayer" controls autoplay>
+                <video id="nativeVideoPlayer" controls controlsList="nodownload" autoplay>
                     Your browser does not support the video tag.
                 </video>
             </div>
